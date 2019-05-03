@@ -4,8 +4,11 @@
 
 <div class="text-center">
     <h1 class="display-4">Enter some text to be reversed:</h1>
-    <form>
-        <input type="text" name="forward-text">
-        <input type="submit" value="Submit">
+    <form method="POST">
+        <input type="text" id="forwardText" placeholder="Text to be reversed..." name="forwardText">
+        <input type="submit" value="Flip It">
     </form>
+    <h2>
+        @ViewBag.ReversedText
+    </h2>
 </div>

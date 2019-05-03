@@ -15,9 +15,16 @@ namespace job_application_project.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult Index(string forwardText)
         {
+            var tempArray = forwardText.ToCharArray();
+            Array.Reverse(tempArray);
+            forwardText = new string(tempArray);
+            ViewBag.ReversedText = forwardText;
             return View();
+            //return Content($"need to flip {forwardText}");
+
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
